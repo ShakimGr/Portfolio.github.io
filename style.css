@@ -394,32 +394,252 @@ html { scroll-behavior: smooth; }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .sidebar { width: 100%; position: relative; height: auto; }
-    .main-content { margin-left: 0; padding: 1rem; }
-    .navbar { position: relative; top: 0; right: 0; margin-bottom: 2rem; }
-    .nav-menu { flex-wrap: wrap; gap: 1rem; justify-content: center; }
-    .experience-card { flex-direction: column; text-align: center; }
-    .experience-badge { margin: 0 0 1rem 0; }
+    /* Container et layout principal */
+    .container { flex-direction: column; }
     
-    /* Carousel responsive */
-    .cert-carousel {
-        max-width: 100%;
-        margin: 1rem;
+    /* Sidebar mobile */
+    .sidebar { 
+        width: 100%; 
+        position: relative; 
+        height: auto; 
+        padding: 1.5rem 1rem;
+        border-right: none;
+        border-bottom: 2px solid rgba(139, 92, 246, 0.2);
     }
     
-    .carousel-container {
-        height: 350px;
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+        margin-bottom: 1rem;
     }
     
-    .slide {
+    .name { 
+        font-size: 1.5rem; 
+        margin-bottom: 0.3rem; 
+    }
+    
+    .title { 
+        font-size: 1rem; 
+        margin-bottom: 1.5rem; 
+    }
+    
+    .contact-info { 
+        margin-top: 1rem; 
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .contact-item {
+        padding: 0.8rem;
+        margin-bottom: 0;
+    }
+    
+    .contact-item:hover { 
+        transform: translateX(5px); 
+    }
+    
+    /* Main content mobile */
+    .main-content { 
+        margin-left: 0; 
+        padding: 1rem; 
+    }
+    
+    /* Navbar mobile */
+    .navbar { 
+        position: relative; 
+        top: 0; 
+        right: 0; 
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    
+    .nav-menu { 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    
+    .nav-menu a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Sections mobile */
+    .content-section { 
+        margin-top: 2rem; 
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-text { 
+        font-size: 1rem; 
+        margin-bottom: 1.5rem; 
+    }
+    
+    /* Timeline mobile */
+    .timeline { 
+        padding-left: 1.5rem; 
+        margin: 1rem 0;
+    }
+    
+    .timeline-icon {
+        width: 35px;
+        height: 35px;
+        left: -1.3rem;
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
         padding: 1rem;
     }
     
+    .timeline-content h4 { 
+        font-size: 1.1rem; 
+    }
+    
+    /* Experience mobile */
+    .experience-grid {
+        gap: 1.5rem;
+    }
+    
+    .experience-card { 
+        flex-direction: column; 
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+    
+    .experience-badge { 
+        margin: 0 0 1rem 0;
+        min-width: 50px;
+        min-height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .experience-content h4 { 
+        font-size: 1.1rem; 
+    }
+    
+    /* Skills grid mobile */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .skill-card {
+        padding: 15px;
+        min-height: 120px;
+    }
+    
+    .skill-icon {
+        font-size: 30px;
+    }
+    
+    .skill-card h4 {
+        font-size: 14px;
+    }
+    
+    /* Carousel mobile */
+    .cert-carousel {
+        max-width: 100%;
+        margin: 1rem 0;
+        border-radius: 10px;
+    }
+    
+    .carousel-container {
+        height: 380px;
+    }
+    
+    .slide {
+        padding: 1rem 0.5rem;
+    }
+    
     .slide img {
-        max-height: 200px;
+        max-height: 220px;
+        max-width: 90%;
     }
     
     .slide h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .carousel-nav.prev {
+        left: 10px;
+    }
+    
+    .carousel-nav.next {
+        right: 10px;
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+        gap: 8px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Terminal mobile */
+    .terminal {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .terminal-body {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsive pour très petits écrans */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .skill-card {
+        padding: 12px;
+        min-height: 100px;
+    }
+    
+    .skill-icon {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+    
+    .skill-card h4 {
+        font-size: 12px;
+    }
+    
+    .carousel-container {
+        height: 320px;
+    }
+    
+    .slide img {
+        max-height: 180px;
+    }
+    
+    .nav-menu a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
     }
 }
